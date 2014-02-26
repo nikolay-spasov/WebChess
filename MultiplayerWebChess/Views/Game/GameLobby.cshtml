@@ -1,0 +1,39 @@
+﻿@model MultiplayerWebChess.Models.CreateGameVM
+@{
+    ViewBag.Title = "GameLobby";
+}
+
+<h2>Total games: <span data-bind="text: games().length"></span></h2>
+
+<a href="#" id="btn-create">Create game</a>
+<a href="#" id="force-refresh">Force refresh</a>
+<div id="create-game" class="hidden">
+    @{ Html.RenderPartial("_CreateGame", Model); }
+</div>
+
+<div>
+    <img id="game-lobby-loading-image" src="~/Images/loader.gif" />
+</div>
+<table id="games" class="hidden">
+    <thead data-bind="if: games().length > 0">
+        <tr>
+            <th>Host</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="all-games" data-bind="foreach: games()">
+        <tr>
+            <td data-bind="text: host"></td>
+            <td>
+                <div data-bind="attr: { 'title': description }, text: description"></div>
+            </td>
+            <td><a href="#" class="btn-join" data-bind="attr: { 'href': link }">Join</a></td>
+        </tr>
+    </tbody>
+</table>
+
+@section scripts {
+    @Scripts.Render("~/bundles/GameLobby")
+    <script src="~/signalr/hubs"></script>
+}

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98304AF3-DA29-4166-B9E6-7B97E0410441}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MultiplayerWebChess.Domain</RootNamespace>
+    <AssemblyName>MultiplayerWebChess.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChessContext.cs" />
+    <Compile Include="DomainContext\DatabaseContext.cs" />
+    <Compile Include="DomainContext\GenericRepository.cs" />
+    <Compile Include="DomainContext\IDatabase.cs" />
+    <Compile Include="DomainContext\IGenericRepository.cs" />
+    <Compile Include="DomainContext\QueryableExtensions.cs" />
+    <Compile Include="Entities\BoardMove.cs" />
+    <Compile Include="Entities\Game.cs" />
+    <Compile Include="Entities\GameState.cs" />
+    <Compile Include="Entities\UserProfile.cs" />
+    <Compile Include="Entities\WhichTurn.cs" />
+    <Compile Include="Migrations\201402211831578_initial.cs" />
+    <Compile Include="Migrations\201402211831578_initial.Designer.cs">
+      <DependentUpon>201402211831578_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402212150322_addedDateTimePlayedToBoardMoves.cs" />
+    <Compile Include="Migrations\201402212150322_addedDateTimePlayedToBoardMoves.Designer.cs">
+      <DependentUpon>201402212150322_addedDateTimePlayedToBoardMoves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402220841283_addedPlayersNavigationPropertiesToGame.cs" />
+    <Compile Include="Migrations\201402220841283_addedPlayersNavigationPropertiesToGame.Designer.cs">
+      <DependentUpon>201402220841283_addedPlayersNavigationPropertiesToGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402220846587_addHostUserProfilePropertyToGames.cs" />
+    <Compile Include="Migrations\201402220846587_addHostUserProfilePropertyToGames.Designer.cs">
+      <DependentUpon>201402220846587_addHostUserProfilePropertyToGames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402241210423_addKingPositionsToGames.cs" />
+    <Compile Include="Migrations\201402241210423_addKingPositionsToGames.Designer.cs">
+      <DependentUpon>201402241210423_addKingPositionsToGames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402241248292_changedTurnInGames.cs" />
+    <Compile Include="Migrations\201402241248292_changedTurnInGames.Designer.cs">
+      <DependentUpon>201402241248292_changedTurnInGames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201402211831578_initial.resx">
+      <DependentUpon>201402211831578_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402212150322_addedDateTimePlayedToBoardMoves.resx">
+      <DependentUpon>201402212150322_addedDateTimePlayedToBoardMoves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402220841283_addedPlayersNavigationPropertiesToGame.resx">
+      <DependentUpon>201402220841283_addedPlayersNavigationPropertiesToGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402220846587_addHostUserProfilePropertyToGames.resx">
+      <DependentUpon>201402220846587_addHostUserProfilePropertyToGames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402241210423_addKingPositionsToGames.resx">
+      <DependentUpon>201402241210423_addKingPositionsToGames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402241248292_changedTurnInGames.resx">
+      <DependentUpon>201402241248292_changedTurnInGames.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

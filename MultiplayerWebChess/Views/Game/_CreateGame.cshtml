@@ -1,0 +1,13 @@
+﻿@using MultiplayerWebChess.Models
+@model CreateGameVM
+
+@using (Html.BeginForm("CreateGame", "Game", FormMethod.Post))
+{
+    @Html.EditorFor(m => m.Description)
+    <select name="ColorSelect" id="ColorSelect">
+        <option value="0" selected="selected">Auto</option>
+        <option value="1">White</option>
+        <option value="2">Black</option>
+    </select>
+    <input type="submit" value="Create" />
+}

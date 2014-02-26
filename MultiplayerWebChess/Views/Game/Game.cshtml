@@ -1,0 +1,35 @@
+﻿@model MultiplayerWebChess.Models.GameVM
+@{
+    ViewBag.Title = "Game";
+}
+
+<h2>Game</h2>
+
+<a href="#" id="btn-flip">Flip board</a>
+
+@Html.HiddenFor(m => m.GameId)
+@Html.HiddenFor(m => m.IsWhite)
+<div id="loading"><img id='loading-image' width="220" height="220" src="~/Images/big-loader.gif" /></div>
+
+<div id="game-board" class="float-left @Model.FlippedHtmlClass hidden">
+    @for (int row = 1; row <= 8; row++)
+    {
+        for (int col = 1; col <= 8; col++)
+        {
+            <div id="@Model.FieldId(row, col)" class="field float-left @Model.BlackOrWhiteFieldClass(row, col)">
+                <div data-bind="attr: { 'class': fields()[@Model.FieldClass(row, col)] }, click: function(data, event) { movePiece(@Model.FieldClass(row, col), data, event); }">
+                </div>
+            </div>
+        }
+    }
+</div>
+<div id="chat" class="float-left hidden">
+    <input id="new-message" type="text" />
+    <input type="submit" value="Send" id="send-msg" />
+    <ul id="all-messages"></ul>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/Chess")
+    <script src="~/signalr/hubs"></script>
+}
