@@ -35,7 +35,8 @@
             gameId: gameId,
             host: host,
             description: description,
-            link: 'JoinGame/' + gameId
+            joinLink: 'JoinGame/' + gameId,
+            watchLink: 'Game/' + gameId
         };
     }
 

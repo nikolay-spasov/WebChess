@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNet.SignalR;
-using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using MultiplayerWebChess.App_Start;
 
 namespace MultiplayerWebChess.Infrastructure

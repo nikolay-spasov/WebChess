@@ -2,15 +2,11 @@
 using Ninject;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace MultiplayerWebChess.App_Start
 {
     public class NinjectConfig
     {
-        //private static IKernel NinjectKernel { get; private set; }
-
         private static IKernel kernel;
 
         public static void Config()

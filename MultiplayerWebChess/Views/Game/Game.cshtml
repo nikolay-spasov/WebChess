@@ -3,9 +3,9 @@
     ViewBag.Title = "Game";
 }
 
-<h2>Game</h2>
-
-<a href="#" id="btn-flip">Flip board</a>
+<div>
+    <span id="btn-flip">Flip board</span>
+</div>
 
 @Html.HiddenFor(m => m.GameId)
 @Html.HiddenFor(m => m.IsWhite)
@@ -23,10 +23,10 @@
         }
     }
 </div>
-<div id="chat" class="float-left hidden">
+<div id="chat" class="float-left">
+    <ul id="all-messages"></ul>
     <input id="new-message" type="text" />
     <input type="submit" value="Send" id="send-msg" />
-    <ul id="all-messages"></ul>
 </div>
 
 @section scripts {

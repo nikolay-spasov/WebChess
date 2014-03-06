@@ -20,6 +20,7 @@
             <th>Host</th>
             <th>Description</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody id="all-games" data-bind="foreach: games()">
@@ -28,7 +29,8 @@
             <td>
                 <div data-bind="attr: { 'title': description }, text: description"></div>
             </td>
-            <td><a href="#" class="btn-join" data-bind="attr: { 'href': link }">Join</a></td>
+            <td><a href="#" class="btn-join" data-bind="attr: { 'href': joinLink }">Join</a></td>
+            <td><a href="#" class="btn-watch" data-bind="attr: { 'href': watchLink }">Watch</a></td>
         </tr>
     </tbody>
 </table>

@@ -56,13 +56,13 @@
     <Compile Include="Entities\Game.cs" />
     <Compile Include="Entities\GameState.cs" />
     <Compile Include="Entities\UserProfile.cs" />
-    <Compile Include="Entities\WhichTurn.cs" />
+    <Compile Include="Entities\Turn.cs" />
     <Compile Include="Migrations\201402211831578_initial.cs" />
-    <Compile Include="Migrations\201402211831578_initial.Designer.cs">
+    <Compile Include="Migrations\201402211831578_initial.designer.cs">
       <DependentUpon>201402211831578_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201402212150322_addedDateTimePlayedToBoardMoves.cs" />
-    <Compile Include="Migrations\201402212150322_addedDateTimePlayedToBoardMoves.Designer.cs">
+    <Compile Include="Migrations\201402212150322_addedDateTimePlayedToBoardMoves.designer.cs">
       <DependentUpon>201402212150322_addedDateTimePlayedToBoardMoves.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201402220841283_addedPlayersNavigationPropertiesToGame.cs" />
@@ -70,15 +70,15 @@
       <DependentUpon>201402220841283_addedPlayersNavigationPropertiesToGame.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201402220846587_addHostUserProfilePropertyToGames.cs" />
-    <Compile Include="Migrations\201402220846587_addHostUserProfilePropertyToGames.Designer.cs">
+    <Compile Include="Migrations\201402220846587_addHostUserProfilePropertyToGames.designer.cs">
       <DependentUpon>201402220846587_addHostUserProfilePropertyToGames.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201402241210423_addKingPositionsToGames.cs" />
-    <Compile Include="Migrations\201402241210423_addKingPositionsToGames.Designer.cs">
+    <Compile Include="Migrations\201402241210423_addKingPositionsToGames.designer.cs">
       <DependentUpon>201402241210423_addKingPositionsToGames.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201402241248292_changedTurnInGames.cs" />
-    <Compile Include="Migrations\201402241248292_changedTurnInGames.Designer.cs">
+    <Compile Include="Migrations\201402241248292_changedTurnInGames.designer.cs">
       <DependentUpon>201402241248292_changedTurnInGames.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />

@@ -811,6 +811,26 @@ tr.pager td {
         margin: 210px;
     }
 
+#btn-flip {
+    background-color: lightblue;
+    border-radius: 15px;
+    width: 50px;
+    padding: 2px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+    #btn-flip:hover {
+        background-color: red;
+        color: white;
+    }
+
 /* Chess pieces 
 ---------------------------------------------------------*/
 .K {
@@ -867,6 +887,30 @@ tr.pager td {
     background-color: green;
 }
 
+#chat {
+    width: 300px;
+    margin-left: 10px;
+}
+
+#all-messages {
+    height: 500px;
+    background-color: white;
+    overflow: auto;
+    list-style: none;
+    padding: 0;
+}
+
+.message-author {
+    color: red;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.message-content {
+    font-size: 1.2em;
+    color: black;
+}
+
 /*Game lobby
     ----------------------------------*/
 table {
@@ -892,7 +936,7 @@ td div {
     padding-right: 5px;
 }
 
-.btn-join {
+.btn-join, .btn-watch {
     background-color: lightblue;
     border-radius: 15px;
     width: 50px;
@@ -905,7 +949,7 @@ td div {
     text-align: center;
 }
 
-    .btn-join:hover {
+    .btn-join:hover, .btn-watch:hover {
         background-color: red;
         color: white;
     }

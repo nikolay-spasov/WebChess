@@ -224,7 +224,7 @@
     </Compile>
     <Compile Include="Hubs\Chess.cs" />
     <Compile Include="Hubs\GameLobby.cs" />
-    <Compile Include="Infrastructure\AppNinjectDependencyResolver.cs" />
+    <Compile Include="Infrastructure\SignalRResolver.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\CreateGameVM.cs" />

@@ -56,7 +56,10 @@
     }
 
     chess.client.addChatMessage = function (msg) {
-        $('#all-messages').append('<li>' + msg + '</li>');
+        $('#all-messages').append($("<li><span class='message-author'>" +
+            msg.author + ": </span><span class='message-content'>" + msg.message + "</span></li>"));
+
+        $('#all-messages').animate({ scrollTop: $(document).height() });
     }
 
     function initHub() {

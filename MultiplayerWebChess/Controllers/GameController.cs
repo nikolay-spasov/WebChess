@@ -1,8 +1,6 @@
 ﻿using MultiplayerWebChess.Domain.DomainContext;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using MultiplayerWebChess.Domain.Entities;
 using WebMatrix.WebData;
@@ -12,6 +10,7 @@ using Microsoft.AspNet.SignalR;
 
 namespace MultiplayerWebChess.Controllers
 {
+    [System.Web.Mvc.Authorize]
     public class GameController : Controller
     {
         private static Random rand = new Random();
@@ -25,6 +24,7 @@ namespace MultiplayerWebChess.Controllers
             db = database;
         }
 
+        [AllowAnonymous]
         public ActionResult Game(string id)
         {
             Guid gameId = Guid.Parse(id);
@@ -41,6 +41,7 @@ namespace MultiplayerWebChess.Controllers
             return View(viewModel);
         }
 
+        [AllowAnonymous]
         public ActionResult GameLobby()
         {
             CreateGameVM viewModel = new CreateGameVM
@@ -50,7 +51,6 @@ namespace MultiplayerWebChess.Controllers
             return View(viewModel);
         }
 
-        [System.Web.Mvc.Authorize]
         [HttpPost]
         public ActionResult CreateGame(CreateGameVM game)
         {

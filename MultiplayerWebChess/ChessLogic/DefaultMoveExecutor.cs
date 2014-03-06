@@ -1,8 +1,5 @@
-﻿using MultiplayerWebChess.ChessLogic;
-using MultiplayerWebChess.Domain.Entities;
+﻿using MultiplayerWebChess.Domain.Entities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MultiplayerWebChess.ChessLogic
 {

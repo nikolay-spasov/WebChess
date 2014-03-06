@@ -4,7 +4,6 @@ using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
-using MultiplayerWebChess.Models;
 using MultiplayerWebChess.Domain;
 
 namespace MultiplayerWebChess.Filters

@@ -1,7 +1,7 @@
 ﻿namespace MultiplayerWebChess.Domain.Entities
 {
-    public enum GameState
+    public enum Turn
     {
-        Waiting, Playing, GameOver
+        White, Black
     }
 }

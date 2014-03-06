@@ -3,7 +3,6 @@ using MultiplayerWebChess.ChessLogic;
 using MultiplayerWebChess.Domain.DomainContext;
 using MultiplayerWebChess.Domain.Entities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebMatrix.WebData;
@@ -109,7 +108,9 @@ namespace MultiplayerWebChess.Hubs
             if (Guid.TryParse(gameId, out gId) &&
                 ((game = db.Games.GetById(gId)) != null))
             {
-                Clients.Group(game.Id.ToString()).addChatMessage(HttpUtility.HtmlEncode(message));
+                string encodedMessage = HttpUtility.HtmlEncode(message);
+                Clients.Group(game.Id.ToString()).addChatMessage(
+                    new { author = Context.User.Identity.Name, message = encodedMessage });
             }
         }
 
@@ -117,8 +118,12 @@ namespace MultiplayerWebChess.Hubs
         private void InitConnection(string gameId)
         {
             Groups.Add(Context.ConnectionId, gameId);
-            Clients.OthersInGroup(gameId).addChatMessage(
-                HttpUtility.HtmlEncode(WebSecurity.CurrentUserName + " connected."));
+            Clients.OthersInGroup(gameId).addChatMessage(new
+            {
+                author = "System",
+                message =
+                    HttpUtility.HtmlEncode(WebSecurity.CurrentUserName + " connected.")
+            });
         }
 
         private bool IsPlayerTurn(Game game, int userId)
